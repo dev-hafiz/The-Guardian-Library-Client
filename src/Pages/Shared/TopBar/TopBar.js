@@ -21,8 +21,8 @@ const TopBar = () => {
               >
                
               </IconButton>
-              <Typography variant="h5" component="div" sx={{ flexGrow: 1, color:'#171717', fontWeight:'900' }}>
-                edWard english
+              <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
+                EdWard English
               </Typography>
               <Button color="inherit" sx={{color:'#171717'}}>Login</Button>
             </Toolbar>

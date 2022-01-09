@@ -3,18 +3,18 @@
           "id":101,
           "title": "Skilled Lecturers",
           "des" : "The point of skills Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
-          "img": "https://i.ibb.co/WfvKGGF/Lecturers-Icon.png"
+          "img": "https://i.ibb.co/r4NDqMF/student.png"
      },
      {
           "id":102,
           "title": "Scholarship Facility",
           "des" : "Scholarship using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to power",
-          "img": "https://i.ibb.co/WFZP5B3/Scholarship-Icon.png"
+          "img": "https://i.ibb.co/mDTJ0cY/schoolarship.png"
      },
      {
           "id":103,
           "title": "Book Library & Store",
           "des" : "Store book library using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to ideal",
-          "img": "https://i.ibb.co/5v8SNwP/BookIcon.png"
+          "img": "https://i.ibb.co/qgP17FJ/open-book.png"
      }
 ]
