@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const TopBar = () => {
      return (
           <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
+          <AppBar position="fixed">
             <Toolbar sx={{background: '#fff'}}>
               <IconButton
                 size="large"
@@ -21,8 +21,8 @@ const TopBar = () => {
               >
                
               </IconButton>
-              <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
-                EdWard English
+              <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
+                Okshi English
               </Typography>
               <Button color="inherit" sx={{color:'#171717'}}>Login</Button>
             </Toolbar>

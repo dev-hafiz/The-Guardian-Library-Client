@@ -23,7 +23,7 @@ const TeacherTalk = () => {
             
             <Grid item xs={12} md={5} sx={{display:'flex', justifyContent:'center'}}>
               <img
-               style={{width:'100%', marginTop:'-120px'}}
+               style={{width:'100%', marginTop:'-120px', paddingTop:'20px'}}
               src={teacherImg} alt="" />
             </Grid>
             <Grid item xs={12} md={7} sx={{
