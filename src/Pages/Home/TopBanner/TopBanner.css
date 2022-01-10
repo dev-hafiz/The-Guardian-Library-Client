@@ -5,6 +5,8 @@
      font-family: sans-serif;
      font-weight: 600;
      transition: linear .3s;
+     border: none;
+     outline: none;
      
 }
 

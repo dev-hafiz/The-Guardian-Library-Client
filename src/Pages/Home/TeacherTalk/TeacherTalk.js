@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import teacherImg from '../../../../src/Assets/images/HarryTeacher.png';
 import teacherBg from '../../../../src/Assets/images/teacherBG.png';
-import {  Typography } from '@mui/material';
+import {  Button, Typography } from '@mui/material';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -52,7 +52,7 @@ const TeacherTalk = () => {
                <Typography variant='h6' sx={{color:'#fff', mb:3, fontWeight:"300"}}>
                Time is the coin of your life. It is the only coin you have, and only you can determine how it will be spent. Be careful lest you let other people spend it for you
                </Typography>
-               <butto className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Skills Talk <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></butto>
+               <button className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Skills Talk <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></button>
                  </Box>
               </Box>
             </Grid>

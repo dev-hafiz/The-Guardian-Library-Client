@@ -5,11 +5,13 @@ import AvailableBooks from '../AvailableBooks/AvailableBooks';
 import StoreBookHeader from '../StoreBookHeader/StoreBookHeader';
 
 const StoreBook = () => {
+     const [date, setDate] = React.useState(new Date());
+
      return (
           <Box>
                <TopBar/>
-               <StoreBookHeader/>
-               <AvailableBooks/>
+               <StoreBookHeader date={date} setDate={setDate}/>
+               <AvailableBooks date={date}/>
           </Box>
      );
 };
