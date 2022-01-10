@@ -6,6 +6,7 @@ import { Button, Typography } from '@mui/material';
 import './TopBanner.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const TopBanner = () => {
 
@@ -23,7 +24,9 @@ const TopBanner = () => {
                          OKSH<span style={{color:'#CC8D52'}}>i</span> <br />
                          ENGLISH
                     </Typography>
+                    <Link to="/storebook">
                     <button className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Join Today <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></button>
+                    </Link>
                     </Box>
                </Grid>
                <Grid item data-aos="fade-left"  xs={12} md={7} >

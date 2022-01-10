@@ -1,0 +1,98 @@
+[
+     {
+          "id":"01",
+          "title":"The strength in our scars",
+          "time":"07:00 PM - 08:00 PM",
+          "space":"5",
+          "Price":"14",
+          "img":"https://i.ibb.co/x5066yF/book1-removebg-preview.png"
+     },
+     {
+          "id":"02",
+          "title":"Why you climb mountain",
+          "time":"08:00 PM - 09:00 PM",
+          "space":"7",
+          "Price":"14",
+          "img":"https://i.ibb.co/JjZMgyy/book2-removebg-preview.png"
+     },
+     {
+          "id":"03",
+          "title":"The millionair success habits",
+          "time":"09:00 PM - 10:00 PM",
+          "space":"3",
+          "Price":"24",
+          "img":"https://i.ibb.co/k4Xt1LS/book3-removebg-preview.png"
+     },
+     {
+          "id":"04",
+          "title":"Think like a billionaire",
+          "time":"11:00 AM - 12:00 AM",
+          "space":"5",
+          "Price":"12",
+          "img":"https://i.ibb.co/ynpR372/book4-removebg-preview.png"
+     },
+     {
+          "id":"05",
+          "title":"Extraordinary Women",
+          "time":"06:00 AM - 07:00 AM",
+          "space":"7",
+          "Price":"24",
+          "img":"https://i.ibb.co/mcWJJWk/book5-removebg-preview.png"
+     },
+     {
+          "id":"06",
+          "title":"The gone girl",
+          "time":"07:00 AM - 08:00 AM",
+          "space":"9",
+          "Price":"18",
+          "img":"https://i.ibb.co/2d542m1/book6-removebg-preview.png"
+     },
+     {
+          "id":"07",
+          "title":"The scarlet letter",
+          "time":"09:00 AM - 10:00 AM",
+          "space":"15",
+          "Price":"30",
+          "img":"https://i.ibb.co/8sPB1x0/book7-removebg-preview.png"
+     },
+     {
+          "id":"08",
+          "title":"Exploring the now",
+          "time":"10:00 AM - 11:00 AM",
+          "space":"4",
+          "Price":"25",
+          "img":"https://i.ibb.co/7J5RDHd/book8-removebg-preview.png"
+     },
+     {
+          "id":"09",
+          "title":"The house of seven gables",
+          "time":"03:00 AM - 04:00 AM",
+          "space":"10",
+          "Price":"20",
+          "img":"https://i.ibb.co/DfLrNWQ/book9-removebg-preview.png"
+     },
+     {
+          "id":"10",
+          "title":"The incarnation of joe",
+          "time":"01:00 AM - 02:00 AM",
+          "space":"6",
+          "Price":"19",
+          "img":"https://i.ibb.co/Qv2ZfT0/book10-removebg-preview.png"
+     },
+     {
+          "id":"11",
+          "title":"The Odyssey",
+          "time":"06:00 PM - 07:00 PM",
+          "space":"5",
+          "Price":"32",
+          "img":"https://i.ibb.co/0Zxz4X6/book11-removebg-preview.png"
+     },
+     {
+          "id":"12",
+          "title":"After Him",
+          "time":"08:00 PM - 09:00 PM",
+          "space":"3",
+          "Price":"28",
+          "img":"https://i.ibb.co/xJqDp9b/book12-removebg-preview.png"
+     }
+]
