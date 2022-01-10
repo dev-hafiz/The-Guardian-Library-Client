@@ -1,0 +1,74 @@
+
+.Project_Wrapper {
+     overflow: hidden;
+    
+ }
+ 
+ .Singel_Project {
+     
+     float: left;
+     overflow: hidden;
+     position: relative;
+     cursor: pointer;
+ 
+ }
+ 
+ .Singel_Project img {
+     width: 100%;
+ }
+ 
+ .Project_Info {
+     position: absolute;
+     bottom: 4px;
+     overflow: hidden;
+ }
+ 
+ .Project_meata {
+     padding: 30px 15px;
+     
+     background: linear-gradient(to bottom, transparent, black 140px);
+ }
+ 
+ .Project_aLink .myLink {
+     color: white;
+     text-transform: capitalize;
+     font-family: 'Roboto';
+ }
+ 
+ .Project_aLink h2 {
+     font-family: 'Roboto';
+     color: white;
+     text-transform: uppercase;
+     font-size: 17px;
+     margin-top: 10px;
+     margin-bottom: -30px;
+     transition: .2s linear;
+ }
+ 
+ .ProjecticonBtn {
+     text-decoration: none;
+     color: white;
+     font-family: 'Roboto';
+     font-weight: 500;
+     transform: translateX(-120px);
+     display: block;
+     transition: .2s;
+     transition-timing-function: cubic-bezier(0, 0.59, 0.43, 0.99);
+ }
+ 
+ .ProjecticonBtn i {
+     font-size: 10px;
+     margin-left: 3px;
+ }
+ 
+ 
+ .Singel_Project:hover .Project_aLink h2 {
+     margin-bottom: 40px;
+    margin-top: 22px;
+ }
+ 
+ .Singel_Project:hover .ProjecticonBtn {
+     transform: translateX(0px);
+ }
+ 
+ 

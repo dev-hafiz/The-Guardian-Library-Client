@@ -3,11 +3,15 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container, Typography } from '@mui/material';
 import Service from '../../Home/Services/Service/Service';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Services = () => {
 
+     useEffect(()=>{
+          Aos.init({duration:2000});
+     },[])
      const [services, SetServices] = useState([])
 
      useEffect( ()=>{
@@ -17,7 +21,7 @@ const Services = () => {
      },[])
 
      return (
-          <Box sx={{ flexGrow: 1, marginTop:'100px', marginBottom: '100px' }}>
+          <Box  data-aos="fade-up" sx={{ flexGrow: 1, marginTop:'100px', marginBottom: '100px' }}>
           <Container>
           <Box sx={{width: '400px', marginBottom: '50px'}}>
           <Typography variant='h2' style={{fontFamily: 'Abril Fatface', color:'#333333'}} >
