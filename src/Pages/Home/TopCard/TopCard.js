@@ -32,10 +32,10 @@ const TopCard = () => {
                <Box className="Project_Info">
                <Box className="Project_meata">
                <Box className="Project_aLink">
-                    <Link className="myLink" to="/">Courses</Link>
+                    <Link className="myLink" to="/storebook">Reading Books</Link>
                     <h2>Studies serve for delight, for ornaments, and for ability</h2>
                </Box>
-               <Link className="ProjecticonBtn" to="/">Learn more <i className="fas fa-arrow-right"></i></Link>
+               <Link className="ProjecticonBtn" to="/storebook">Learn more <i className="fas fa-arrow-right"></i></Link>
                </Box>
                </Box>
                </Box>
@@ -46,10 +46,10 @@ const TopCard = () => {
                <Box className="Project_Info">
                <Box className="Project_meata">
                <Box className="Project_aLink">
-                    <Link className="myLink" to="/">Courses</Link>
+                    <Link className="myLink" to="/storebook">Reading Books</Link>
                     <h2>Self thought book which help to growth your strength</h2>
                </Box>
-               <Link className="ProjecticonBtn" to="/">Learn more <i className="fas fa-arrow-right"></i></Link>
+               <Link className="ProjecticonBtn" to="/storebook">Learn more <i className="fas fa-arrow-right"></i></Link>
                </Box>
                </Box>
                </Box>
@@ -60,10 +60,10 @@ const TopCard = () => {
                <Box className="Project_Info">
                <Box className="Project_meata">
                <Box className="Project_aLink">
-                    <Link className="myLink" to="/">Courses</Link>
+                    <Link className="myLink" to="/storebook">Redaing Books</Link>
                     <h2>Make sure your focus and still hard work untill  you success</h2>
                </Box>
-               <Link className="ProjecticonBtn" to="/">Learn more <i className="fas fa-arrow-right"></i></Link>
+               <Link className="ProjecticonBtn" to="/storebook">Learn more <i className="fas fa-arrow-right"></i></Link>
                </Box>
                </Box>
                </Box> 

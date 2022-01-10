@@ -1,12 +1,22 @@
 import { Container, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import topImg from '../../../src/Assets/images/library-banner.png';
 import Calendar from '../../../src/Pages/Shared/Calendar/Calendar';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+
 const StoreBookHeader = ({date, setDate}) => {
+
+     useEffect(()=>{
+          Aos.init({duration:2500});
+     },[])
+
+
      return (
-          <Container sx={{ paddingTop:'170px'}}>
+          <Container data-aos="fade-up" sx={{ paddingTop:'170px'}}>
           <Box sx={{ width: '100%' }}>
           <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={12} md={5} sx={{display:'flex', alignItems:'center'}}>
