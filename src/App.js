@@ -5,6 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import StoreBook from './StoreBook/StoreBook/StoreBook';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <Routes>
        <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
+        <Route path="storebook" element={<StoreBook />} />
     </Routes>
   </BrowserRouter>,
     </div>

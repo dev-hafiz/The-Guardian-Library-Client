@@ -18,9 +18,9 @@ const TopBanner = () => {
            <Box sx={{ flexGrow: 1 }}>
                <Grid container spacing={2}>
                <Grid data-aos="fade-right" item xs={12} md={5}>
-                    <Box sx={{marginLeft:'30px', marginTop:'260px'}}>
+                    <Box sx={{marginLeft:'30px', marginTop:'300px'}}>
                     <Typography variant='h1' sx={{fontFamily: 'Abril Fatface', color:'#333333', fontSize:'90px', marginBottom:'30px'}}>
-                         OKSH<span style={{color:'#171717'}}>i</span> <br />
+                         OKSH<span style={{color:'#CC8D52'}}>i</span> <br />
                          ENGLISH
                     </Typography>
                     <butto className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Join Today <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></butto>

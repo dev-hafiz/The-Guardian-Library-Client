@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 const TopBar = () => {
      return (
@@ -22,8 +23,14 @@ const TopBar = () => {
                
               </IconButton>
               <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
-                Okshi English
+                Okshi's Learner
               </Typography>
+              <Link  to="/"> 
+              <Button sx={{color:'#171717'}}>Home</Button> 
+              </Link>
+              <Link to="/storebook"> 
+              <Button sx={{color:'#171717'}}>Store Books</Button> 
+              </Link>
               <Button color="inherit" sx={{color:'#171717'}}>Login</Button>
             </Toolbar>
           </AppBar>
