@@ -28,10 +28,14 @@ const TopBar = () => {
               <Link  to="/"> 
               <Button sx={{color:'#171717'}}>Home</Button> 
               </Link>
-              <Link to="/storebook"> 
+              <Link  to="/storebook"> 
               <Button sx={{color:'#171717'}}>Store Books</Button> 
               </Link>
-              <Button color="inherit" sx={{color:'#171717'}}>Login</Button>
+              <Link  to="/Login"> 
+              <Button sx={{color:'#171717'}}>Login</Button> 
+              </Link>
+              
+              
             </Toolbar>
           </AppBar>
         </Box>
