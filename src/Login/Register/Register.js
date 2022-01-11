@@ -1,16 +1,10 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-import { NavLink , useLocation, useNavigate} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LoginImg from "../../../src/Assets/images/loginPic.png";
-import useFirebase from "../../hooks/useFirebase";
 
-const Login = () => {
-  const { loginWithGoogle } = useFirebase();
-
-  //Location & navigate
-  const location = useLocation()
-  const navigate = useNavigate()
+const Register = () => {
   //State for store input data
   const [loginData, setLoginData] = useState({});
   // console.log(loginData)
@@ -21,11 +15,6 @@ const Login = () => {
     const newLoginData = { ...loginData };
     newLoginData[filed] = value;
     setLoginData(newLoginData);
-  };
-
-  //handle google login
-  const handleGoogleLogin = () => {
-    loginWithGoogle(location , navigate);
   };
   //Form handler
   const handleLoginSubmit = (e) => {
@@ -40,10 +29,20 @@ const Login = () => {
             component="div"
             sx={{ flexGrow: 1, fontFamily: "Abril Fatface", color: "#333333" }}
           >
-            Login Please With Your Willing
+            Register Please With Your Willing
           </Typography>
 
           <form onSubmit={handleLoginSubmit}>
+            <TextField
+              id="standard-basic"
+              sx={{ width: "90%", mt: 3, mb: 1 }}
+              label="Your Name"
+              variant="standard"
+              onChange={handleOnchange}
+              type="text"
+              name="text"
+              required
+            />
             <TextField
               id="standard-basic"
               sx={{ width: "90%", mt: 3, mb: 1 }}
@@ -64,6 +63,16 @@ const Login = () => {
               name="password"
               required
             />
+            <TextField
+              id="standard-basic"
+              sx={{ width: "90%", mt: 3, mb: 1 }}
+              label="Re-Type Password"
+              variant="standard"
+              onChange={handleOnchange}
+              type="password"
+              name="password2"
+              required
+            />
 
             <Button
               type="submit"
@@ -77,32 +86,13 @@ const Login = () => {
                 fontWeight: "bold",
               }}
             >
-              Please Login
+              Please Register
             </Button>
           </form>
 
-          <Button
-            variant="contained"
-            color="inherit"
-            onClick={handleGoogleLogin}
-            sx={{
-              width: "90%",
-              mt: 5,
-              background: "#D1C4BB",
-              color: "#171717",
-              fontWeight: "bold",
-            }}
-          >
-            <i
-              style={{ marginRight: "2px" }}
-              className="fab fa-2x fa-google"
-            ></i>
-            oogle Login
-          </Button>
-
-          <NavLink style={{ textDecoration: "none" }} to="/register">
+          <NavLink style={{ textDecoration: "none" }} to="/login">
             <Button variant="text" sx={{ color: "#333", mt: 3 }}>
-              Don't have an account ? please register
+              Already have an account ? please login
             </Button>
           </NavLink>
         </Box>
@@ -114,4 +104,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

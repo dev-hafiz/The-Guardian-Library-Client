@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 
 const TopBar = () => {
+
+  const {userLogOut , user} = useFirebase()
+
      return (
           <Box sx={{ flexGrow: 1 }}>
           <AppBar position="fixed">
@@ -31,10 +35,11 @@ const TopBar = () => {
               <Link  to="/storebook"> 
               <Button sx={{color:'#171717'}}>Store Books</Button> 
               </Link>
-              <Link  to="/Login"> 
+              { !user.email ? <Link  to="/Login"> 
               <Button sx={{color:'#171717'}}>Login</Button> 
               </Link>
-              
+              :
+              <Button sx={{color:'#171717'}}>Log Out</Button>} 
               
             </Toolbar>
           </AppBar>
