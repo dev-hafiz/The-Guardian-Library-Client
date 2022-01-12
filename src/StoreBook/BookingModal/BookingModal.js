@@ -49,6 +49,8 @@ const BookingModal = ({openBooking, handleCloseBooking, bookslot, date, setBooke
           const booked = {
             ...bookingInfo,
             time,
+            Price,
+            img,
             BookName: title,
             date: date.toLocaleDateString()
           }
