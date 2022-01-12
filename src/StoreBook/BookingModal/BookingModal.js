@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -23,15 +23,50 @@ const style = {
 };
 
 
-const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
+const BookingModal = ({openBooking, handleCloseBooking, bookslot, date, setBookeSuccess}) => {
 
-     const { time, Price, img} = bookslot || {}
+     const { title, time, Price, img} = bookslot || {}
      const {user} = useAuth()
 
 
+      //State for bookingInfo
+      let initialInfo = {learnerName: user.displayName, email:user.email, phone:''}
+      const[bookingInfo, setBookingInfo] = useState(initialInfo)
+
+      //handle onBlur for getting data
+      const handleOnBlur = e =>{
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = {...bookingInfo};
+        newInfo[field] = value;
+        setBookingInfo(newInfo);
+
+
+      }
+
      //Submit Form Handle
      const handleBookingSubmit = e =>{
-          alert('Information submited')
+          const booked = {
+            ...bookingInfo,
+            time,
+            BookName: title,
+            date: date.toLocaleDateString()
+          }
+         
+          fetch(`http://localhost:5000/booked`,{
+            method:'POST',
+            headers:{
+              'content-type':'application/json'
+            },
+            body: JSON.stringify(booked)
+          })
+          .then(res => res.json())
+          .then(data => {
+            if(data.insertedId){
+              setBookeSuccess(true)
+            }
+          })
+
           handleCloseBooking()
           e.preventDefault()
      }
@@ -57,6 +92,9 @@ const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
           alt="Paella dish"
           /> 
             <Typography id="transition-modal-title" variant="h4" component="h2">
+              {title}
+            </Typography>
+            <Typography id="transition-modal-title" variant="h4" component="h2">
               ${Price}
             </Typography>
            
@@ -72,18 +110,24 @@ const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
              sx={{width:'90%', mt:3, mb:1}} 
              variant="standard" 
              defaultValue={user.displayName}
+             name="learnerName"
+             onBlur={handleOnBlur}
              />
 
             <TextField id="standard-basic"
              sx={{width:'90%', mt:3, mb:1}} 
              variant="standard" 
              defaultValue='Phone Number'
+             name="phone"
+             onBlur={handleOnBlur}
              />
 
             <TextField id="standard-basic"
              sx={{width:'90%', mt:3, mb:1}} 
              variant="standard" 
              defaultValue={user.email}
+             name="email"
+             onBlur={handleOnBlur}
              />
 
             <TextField id="standard-basic"

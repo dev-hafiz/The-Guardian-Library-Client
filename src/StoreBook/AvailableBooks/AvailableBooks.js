@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Alert, AlertTitle, Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
@@ -7,6 +7,7 @@ import BookingSlot from '../BookingSlot/BookingSlot';
 const AvailableBooks = ({date}) => {
 
      const [bookSlots, setBookSlots] = useState([])
+     const [bookedSuccess, setBookeSuccess] = useState(false)
      useEffect(()=>{
           fetch(`/BookingSlots.json`)
           .then(res => res.json())
@@ -22,11 +23,16 @@ const AvailableBooks = ({date}) => {
                Selected Date : {date.toString()} 
                </Typography>
                <hr />
+               {bookedSuccess && <Alert sx={{color:'#fff', background:'#333333'}} severity="success">
+               <AlertTitle>Success</AlertTitle>
+               Your Booked is successfull — <strong>Congrats</strong>
+             </Alert>}
 
                <Box sx={{ flexGrow: 1, marginTop:'80px', marginBottom:'100px' }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
                          bookSlots.map(bookslot=><BookingSlot
+                              setBookeSuccess={setBookeSuccess}
                               date={date}
                               key={bookslot.id}
                               bookslot={bookslot}

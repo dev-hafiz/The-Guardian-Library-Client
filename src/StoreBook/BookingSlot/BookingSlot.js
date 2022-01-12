@@ -10,7 +10,7 @@ import BookingModal from '../../../src/StoreBook/BookingModal/BookingModal';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-const BookingSlot = ({bookslot, date}) => {
+const BookingSlot = ({bookslot, date, setBookeSuccess}) => {
      const {title, time, space, Price, img} = bookslot || {}
      const [openBooking, setOpenBooking] = React.useState(false);
      const handleOpenBooking = () => setOpenBooking(true);
@@ -62,6 +62,7 @@ const BookingSlot = ({bookslot, date}) => {
           bookslot={bookslot}
           openBooking={openBooking}
           handleCloseBooking={handleCloseBooking}
+          setBookeSuccess={setBookeSuccess}
           />
        </>
      );
