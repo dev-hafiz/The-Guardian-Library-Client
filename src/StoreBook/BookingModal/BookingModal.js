@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import useAuth from '../../hooks/useAuth';
 
 
 const style = {
@@ -24,7 +25,8 @@ const style = {
 
 const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
 
-     const {title, time, space, Price, img} = bookslot || {}
+     const { time, Price, img} = bookslot || {}
+     const {user} = useAuth()
 
 
      //Submit Form Handle
@@ -69,7 +71,7 @@ const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
             <TextField id="standard-basic"
              sx={{width:'90%', mt:3, mb:1}} 
              variant="standard" 
-             defaultValue='Your Name'
+             defaultValue={user.displayName}
              />
 
             <TextField id="standard-basic"
@@ -81,7 +83,7 @@ const BookingModal = ({openBooking, handleCloseBooking, bookslot, date}) => {
             <TextField id="standard-basic"
              sx={{width:'90%', mt:3, mb:1}} 
              variant="standard" 
-             defaultValue='Your Email'
+             defaultValue={user.email}
              />
 
             <TextField id="standard-basic"

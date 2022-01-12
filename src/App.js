@@ -5,6 +5,7 @@ import StoreBook from "./StoreBook/StoreBook/StoreBook";
 import Login from "./Login/Login/Login";
 import Register from "./Login/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
+import PrivateRoute from "./Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -14,7 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/storebook" element={<StoreBook />} />
+          <Route path="/storebook" element={
+          <PrivateRoute>
+          <StoreBook />
+          </PrivateRoute>
+          } />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

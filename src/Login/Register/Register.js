@@ -14,12 +14,13 @@ const Register = () => {
   const location = useLocation()
   const navigate = useNavigate()
   // console.log(loginData)
-  // Onchange Handler
-  const handleOnchange = (e) => {
+  // onBlur Handler
+  const handleOnBlur = (e) => {
     const filed = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...loginData };
     newLoginData[filed] = value;
+    console.log(newLoginData)
     setLoginData(newLoginData);
   };
 
@@ -52,9 +53,9 @@ const Register = () => {
               sx={{ width: "90%", mt: 3, mb: 1 }}
               label="Your Name"
               variant="standard"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
               type="text"
-              name="text"
+              name="name"
               required
             />
             <TextField
@@ -62,7 +63,7 @@ const Register = () => {
               sx={{ width: "90%", mt: 3, mb: 1 }}
               label="Your Email"
               variant="standard"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
               type="email"
               name="email"
               required
@@ -72,7 +73,7 @@ const Register = () => {
               sx={{ width: "90%", mt: 3, mb: 1 }}
               label="Your Password"
               variant="standard"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
               type="password"
               name="password"
               required
@@ -82,7 +83,7 @@ const Register = () => {
               sx={{ width: "90%", mt: 3, mb: 1 }}
               label="Re-Type Password"
               variant="standard"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
               type="password"
               name="password2"
               required
