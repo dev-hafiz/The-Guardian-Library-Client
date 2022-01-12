@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StoreBook from "./StoreBook/StoreBook/StoreBook";
 import Login from "./Login/Login/Login";
 import Register from "./Login/Register/Register";
+import AuthProvider from "./context/AuthProvider/AuthProvider";
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -17,7 +19,8 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
-      ,
+      </AuthProvider>
+      
     </div>
   );
 }

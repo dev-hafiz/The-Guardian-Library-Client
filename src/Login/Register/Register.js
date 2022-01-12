@@ -1,12 +1,18 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Alert, AlertTitle, Button, CircularProgress, Grid, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LoginImg from "../../../src/Assets/images/loginPic.png";
+import useAuth from "../../../src/hooks/useAuth";
 
 const Register = () => {
+
+  const {registerUser, isLoading, error, user} = useAuth()
   //State for store input data
   const [loginData, setLoginData] = useState({});
+
+  const location = useLocation()
+  const navigate = useNavigate()
   // console.log(loginData)
   // Onchange Handler
   const handleOnchange = (e) => {
@@ -16,13 +22,21 @@ const Register = () => {
     newLoginData[filed] = value;
     setLoginData(newLoginData);
   };
+
+  
   //Form handler
   const handleLoginSubmit = (e) => {
+    if(loginData.password !== loginData.password2){
+      alert('Your Password did not match')
+      return;
+    }
+
+    registerUser(loginData.email, loginData.password, loginData.name, location, navigate )
     e.preventDefault();
   };
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 3, sm: 2, md: 3 }}>
-      <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center" }}>
+      <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center", justifyContent:'center', textAlign:'center' }}>
         <Box sx={{ paddingLeft: "30px" }}>
           <Typography
             variant="h2"
@@ -32,7 +46,7 @@ const Register = () => {
             Register Please With Your Willing
           </Typography>
 
-          <form onSubmit={handleLoginSubmit}>
+          {!isLoading && <form onSubmit={handleLoginSubmit}>
             <TextField
               id="standard-basic"
               sx={{ width: "90%", mt: 3, mb: 1 }}
@@ -88,7 +102,19 @@ const Register = () => {
             >
               Please Register
             </Button>
-          </form>
+          </form>}
+
+          <Box sx={{mt:5}}>
+          {isLoading && <CircularProgress/> }
+          {user.email && <Alert severity="success">
+          <AlertTitle>Success</AlertTitle>
+          Okay! You Are Authenticate User — <strong>Congrats</strong>
+        </Alert>}
+        {error && <Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        {error} <strong>check it out!</strong>
+        </Alert>}
+          </Box>
 
           <NavLink style={{ textDecoration: "none" }} to="/login">
             <Button variant="text" sx={{ color: "#333", mt: 3 }}>

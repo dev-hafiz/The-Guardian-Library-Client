@@ -5,13 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 
 const TopBar = () => {
 
-  const {userLogOut , user} = useFirebase()
+  const {userLogOut , user} = useAuth()
 
      return (
           <Box sx={{ flexGrow: 1 }}>
@@ -39,7 +38,7 @@ const TopBar = () => {
               <Button sx={{color:'#171717'}}>Login</Button> 
               </Link>
               :
-              <Button sx={{color:'#171717'}}>Log Out</Button>} 
+              <Button onClick={userLogOut} sx={{color:'#171717'}}>Log Out</Button>} 
               
             </Toolbar>
           </AppBar>

@@ -6,6 +6,9 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 import { useEffect, useState } from "react";
@@ -21,12 +24,55 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
+
+  //Register with email & pass method
+  const registerUser = ( email, password, name,location, navigate) =>{
+    setIsLoading(true)
+    createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const destination = location?.state?.from || '/'
+    navigate(destination)
+    setError("");
+    const newUser = {email, displayName:name}
+    setUser(newUser)
+    
+    //Send name to firebase 
+    updateProfile(auth.currentUser, {
+     displayName: name
+   }).then(() => {
+     
+   }).catch((error) => {
+     
+   });
+   
+  })
+  .catch((error) => {
+    setError(error.message);
+  })
+  .finally(() => setIsLoading(false));
+  }
+
+  //Login with email pass custom method 
+  const loginWithOwnEmaiAndPass  = (email, password, location, navigate) =>{
+    setIsLoading(true)
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const destination = location?.state?.from || '/'
+      navigate(destination)
+    setError('');
+  })
+  .catch((error) => {
+    setError(error.message);
+  })
+  .finally(() => setIsLoading(false));
+  }
+
   // Login with Google method
   const loginWithGoogle = (location, navigate) => {
     setIsLoading(true)
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        const user = result.user;
+        
         const destination = location?.state?.from || '/'
         navigate(destination)
         setError("");
@@ -65,7 +111,11 @@ const useFirebase = () => {
   return {
     user,
     loginWithGoogle,
-    userLogOut
+    userLogOut,
+    registerUser,
+    isLoading,
+    error,
+    loginWithOwnEmaiAndPass
   };
 };
 export default useFirebase;

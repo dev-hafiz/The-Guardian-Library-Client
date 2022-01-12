@@ -1,12 +1,12 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Alert, AlertTitle, Button, CircularProgress, Grid, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { NavLink , useLocation, useNavigate} from "react-router-dom";
 import LoginImg from "../../../src/Assets/images/loginPic.png";
-import useFirebase from "../../hooks/useFirebase";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-  const { loginWithGoogle } = useFirebase();
+  const { loginWithGoogle, loginWithOwnEmaiAndPass, isLoading, error, user } = useAuth();
 
   //Location & navigate
   const location = useLocation()
@@ -29,6 +29,8 @@ const Login = () => {
   };
   //Form handler
   const handleLoginSubmit = (e) => {
+
+    loginWithOwnEmaiAndPass(loginData.email, loginData.password, location, navigate)
     e.preventDefault();
   };
   return (
@@ -99,6 +101,18 @@ const Login = () => {
             ></i>
             oogle Login
           </Button>
+
+          <Box sx={{mt:5}}>
+          {isLoading && <CircularProgress/> }
+          {user.email && <Alert severity="success">
+          <AlertTitle>Success</AlertTitle>
+          Okay! You Are Authenticate User — <strong>Congrats</strong>
+        </Alert>}
+        {error && <Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        {error} <strong>check it out!</strong>
+        </Alert>}
+          </Box>
 
           <NavLink style={{ textDecoration: "none" }} to="/register">
             <Button variant="text" sx={{ color: "#333", mt: 3 }}>
