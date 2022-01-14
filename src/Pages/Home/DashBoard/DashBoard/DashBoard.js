@@ -4,19 +4,17 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
-import { Button, Grid } from '@mui/material';
-import Calendar from '../../../Shared/Calendar/Calendar';
-import PlaceBook from '../PlaceBook/PlaceBook';
-import { NavLink } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
 const drawerWidth = 200;
 
 function DashBoard(props) {
-     const {userLogOut} = useAuth()
+     const {userLogOut, isAdmin} = useAuth()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [date, setDate] =  React.useState(new Date());
+ 
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -26,10 +24,27 @@ function DashBoard(props) {
     <div>
       <Toolbar  />
      
-      <NavLink style={{textDecoration:"none"}}  to="/storebook"> 
-      <Button sx={{color:'#171717', px:4, my:5}} variant='text'><i className="fas fa-book-reader" style={{marginRight:'8px', fontSize:'20px'}}></i>  Store Books</Button> 
+      <NavLink style={{textDecoration:"none"}}  to="/"> 
+      <Button sx={{color:'#171717', px:4, my:5}} variant='text'><i className="fas fa-home" style={{marginRight:'8px', fontSize:'20px'}}></i>  Home</Button> 
       </NavLink>
-      <Button onClick={userLogOut} sx={{color:'#171717', px:4,marginTop:'-44px' }} variant='text'><i className="fas fa-sign-out-alt" style={{marginRight:'8px', fontSize:'20px'}}></i> Log Out</Button> 
+      <NavLink style={{textDecoration:"none"}}  to="/storebook"> 
+      <Button sx={{color:'#171717', px:4, my:5, marginTop:'-44px'}} variant='text'><i className="fas fa-book-reader" style={{marginRight:'8px', fontSize:'20px'}}></i>  Store Books</Button> 
+      </NavLink>
+      <Button onClick={userLogOut} sx={{color:'#171717', px:4,marginTop:'-60px' }} variant='text'><i className="fas fa-sign-out-alt" style={{marginRight:'8px', fontSize:'20px'}}></i> Log Out</Button> 
+      
+      
+      <NavLink style={{textDecoration:"none"}}  to="/dashboard"> 
+      <Button sx={{color:'#171717', px:4, my:5, marginTop:'-20px'}} variant='text'><i className="fas fa-clone" style={{marginRight:'8px', fontSize:'20px' }}></i>  Dash Board</Button> 
+      </NavLink>
+      
+      {isAdmin && <Box>
+        <NavLink style={{textDecoration:"none"}}  to="/dashboard/makeAdmin"> 
+      <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-user-shield" style={{marginRight:'8px', fontSize:'20px' }}></i>  Make Admin</Button> 
+      </NavLink>
+      <NavLink style={{textDecoration:"none"}}  to="/dashboard/addTeacher"> 
+      <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-user-graduate" style={{marginRight:'8px', fontSize:'20px' }}></i>  Add Teacher</Button> 
+      </NavLink>
+      </Box>}
      
     </div>
   );
@@ -78,19 +93,8 @@ function DashBoard(props) {
       >
         <Toolbar />
         
-          <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
-          <Calendar
-               date={date}
-               setDate={setDate}
-          />
-          </Grid>
-          <Grid item xs={12} md={8}>
-          <PlaceBook
-               date={date}
-          />
-          </Grid>
-          </Grid>
+        <Outlet/>
+          
       </Box>
     </Box>
   );
