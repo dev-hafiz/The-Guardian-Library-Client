@@ -2,7 +2,7 @@ import { Box } from '@mui/system';
 import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import topImg from '../../../../src/Assets/images/library-banner.png';
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import './TopBanner.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -21,11 +21,11 @@ const TopBanner = () => {
                <Grid data-aos="fade-right" item xs={12} md={5} sx={{display:'flex', alignItems:'center'}}>
                     <Box sx={{marginLeft:'30px'}}>
                     <Typography variant='h1' sx={{fontFamily: 'Abril Fatface', color:'#333333', fontSize:'90px', marginBottom:'30px'}}>
-                         OKSH<span style={{color:'#CC8D52'}}>i</span> <br />
-                         ENGLISH
+                         OKSH<span style={{color:'#CC8D52'}}>i'</span>s <br />
+                         LEARNER
                     </Typography>
                     <Link to="/storebook">
-                    <button className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Join Today <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></button>
+                    <button className="Mu-btn" sx={{display:'flex', justifyContent:'center'}}>Books Collection <i style={{marginLeft:'8px'}} className="fas fa-arrow-right"></i></button>
                     </Link>
                     </Box>
                </Grid>

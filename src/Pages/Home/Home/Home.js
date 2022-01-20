@@ -2,6 +2,7 @@ import React from 'react';
 import TopBar from '../../Shared/TopBar/TopBar';
 import BottomFooter from '../BottomFooter/BottomFooter';
 import Footer from '../Footer/Footer';
+import OfficeArea from '../OfficeArea/OfficeArea';
 import PreFooter from '../PreFooter/PreFooter';
 import Services from '../Services/Services';
 import TeacherTalk from '../TeacherTalk/TeacherTalk';
@@ -16,6 +17,7 @@ const Home = () => {
               <TopCard/>
               <Services/>
               <TeacherTalk/>
+              <OfficeArea/>
               <PreFooter/>
               <Footer/>
               <BottomFooter/>

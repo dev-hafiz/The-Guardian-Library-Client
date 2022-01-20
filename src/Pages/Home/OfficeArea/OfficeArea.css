@@ -1,0 +1,28 @@
+.donateBtn {
+     background: #E0D8C8;
+     padding: 18px 20px;
+     border: none;
+     outline: none;
+     font-weight: 900;
+     transition: .3s linear;
+}
+
+.getBtn {
+     background: #171717;
+     color: #fff;
+     padding: 18px 20px;
+     border: none;
+     outline: none;
+     font-weight: 900;
+     transition: .3s linear;
+}
+
+.donateBtn:hover {
+     margin-right: 20px;
+     background: #eee;
+}
+
+.getBtn:hover {
+     margin-right: 20px;
+     background: #000000;
+}

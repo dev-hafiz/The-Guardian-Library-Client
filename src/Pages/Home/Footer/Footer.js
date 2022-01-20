@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Grid, Link, Typography } from '@mui/material';
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = () => {
+
+     useEffect(()=>{
+          Aos.init({duration:2000});
+     },[])
+
      return (
-          <Box style={{padding:'100px 30px 50px 30px', background:'#777777', color:'#f8f8f8', marginTop:'120px'}}>
+          <Box data-aos="fade-bottom"  style={{padding:'100px 30px 50px 30px', background:'#777777', color:'#f8f8f8', marginTop:'120px'}}>
               <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 4 }}>
                <Grid item xs={12} md={3}>
                 <Typography variant='h6' sx={{mt:3}}>
                      ABOUT
                      <Box className='dashBar'></Box>
                 </Typography>
-                <Typography variant='subtitle2' style={{fontFamily:'sans-serif', marginTop:'20px', marginBottom:'20px'}}>
+                <Typography variant='subtitle1' style={{fontFamily:'sans-serif', marginTop:'20px', marginBottom:'10px'}}>
                     This is the English books services and selling platform. Throughout this site you can order a book and take the proper suggetions how you can read the best way! 
                      <Box></Box>
                 </Typography>
