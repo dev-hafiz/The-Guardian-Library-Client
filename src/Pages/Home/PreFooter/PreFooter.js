@@ -35,10 +35,10 @@ const PreFooter = () => {
                    </Typography>
                    <Box>
                    <Grid style={{width:'40%', margin:'0 auto', paddingTop:'70px' }} container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid data-aos="flip-left"  item xs={6} md={6}>
+                    <Grid data-aos="flip-right"  item xs={6} md={6}>
                     <img width='100%' style={{textAlign:'center'}} height='100%' src={b1} alt="" />
                     </Grid>
-                    <Grid data-aos="flip-right" item xs={6} md={6}>
+                    <Grid data-aos="flip-left" item xs={6} md={6}>
                     <img  width='100%' height='100%' src={b2} alt="" />
                     </Grid>
                     <Grid data-aos="fade-left" item xs={6} md={6}>

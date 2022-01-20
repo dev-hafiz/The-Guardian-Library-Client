@@ -1,0 +1,62 @@
+.dashBar {
+     width: 16%;
+     height: 5px;
+     background-color: #A0A0A0;
+     margin-top: 10px;
+     margin-bottom: 16px;
+}
+
+.social-icon {
+     color: #f8f8f8;
+     font-size: 25px;
+     margin-right: 16px;
+     margin-top: 20px;
+     transition: .3s linear;
+}
+
+.social-icon:hover {
+     transform: scale(1.5);
+}
+
+.dateBox {
+     border: 1px solid #f8f8f8;
+     padding: 0 6px;
+     margin-right: 10px;
+     margin-top: 8px;
+}
+
+.bottom-link {
+     color: #f8f8f8;
+     text-decoration: none;
+}
+
+.right-icon {
+     font-size: 14px;
+     margin-right: 10px;
+}
+
+.hoverActive {
+     transition: .3s linear;
+}
+
+.hoverActive:hover {
+     margin-left: 14px;
+}
+
+.mailBox {
+     width: 80%;
+     background: #f8f8f8;
+     border: none;
+     outline: none;
+     padding: 14px 14px;
+}
+
+.newsBtn {
+     outline: none;
+     border: none;
+     background-color: #CC8D52;
+     font-size: 16px;
+     padding: 14px 14px;
+     margin-top: 14px;
+     color: #f8f8f8;
+}
