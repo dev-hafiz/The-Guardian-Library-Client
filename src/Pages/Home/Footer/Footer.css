@@ -19,10 +19,14 @@
 }
 
 .dateBox {
-     border: 1px solid #f8f8f8;
+     border: 1px solid #fff;
      padding: 0 6px;
      margin-right: 10px;
      margin-top: 8px;
+     background: #6b6b6b;
+     color: #fff;
+     font-weight: 900;
+
 }
 
 .bottom-link {

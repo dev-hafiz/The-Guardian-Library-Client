@@ -45,10 +45,10 @@ const Footer = () => {
                 </Typography>
                 <Box sx={{display:'flex', alignItems:'center'}}>
                      <Box className='dateBox'>
-                        <Typography variant='h6'>
+                        <Typography variant='h6'  sx={{fontWeight:'900'}}>
                              01
                         </Typography>  
-                        <Typography variant='subtitle2'>
+                        <Typography variant='subtitle2'  sx={{fontWeight:'900'}}>
                              JAN
                         </Typography>  
                      </Box>
@@ -60,10 +60,10 @@ const Footer = () => {
                 </Box>
                 <Box sx={{display:'flex', alignItems:'center', mt:1}}>
                      <Box className='dateBox'>
-                        <Typography variant='h6'>
+                        <Typography variant='h6'  sx={{fontWeight:'900'}}>
                              14
                         </Typography>  
-                        <Typography variant='subtitle2'>
+                        <Typography variant='subtitle2'  sx={{fontWeight:'900'}}>
                              JUN
                         </Typography>  
                      </Box>
@@ -75,10 +75,10 @@ const Footer = () => {
                 </Box>
                 <Box sx={{display:'flex', alignItems:'center', mt:1}}>
                      <Box className='dateBox'>
-                        <Typography variant='h6'>
+                        <Typography variant='h6'  sx={{fontWeight:'900'}}>
                              16
                         </Typography>  
-                        <Typography variant='subtitle2'>
+                        <Typography variant='subtitle2'  sx={{fontWeight:'900'}}>
                              DEC
                         </Typography>  
                      </Box>

@@ -1,5 +1,6 @@
 import React from 'react';
 import TopBar from '../../Shared/TopBar/TopBar';
+import Athenaeum from '../Athenaeum/Athenaeum';
 import BottomFooter from '../BottomFooter/BottomFooter';
 import Footer from '../Footer/Footer';
 import OfficeArea from '../OfficeArea/OfficeArea';
@@ -16,6 +17,7 @@ const Home = () => {
               <TopBanner/>
               <TopCard/>
               <Services/>
+              <Athenaeum/>
               <TeacherTalk/>
               <OfficeArea/>
               <PreFooter/>

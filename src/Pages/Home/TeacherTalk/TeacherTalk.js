@@ -14,7 +14,7 @@ const talkBG  = {
      backgroundColor: 'rgba(62, 61, 61, 0.8)',
      backgroundBlendMode: 'darken, luminosity',
      marginTop:'190px',
-     paddingTop:'30px',
+     paddingTop:'45px',
      width:'100%'
      
 }
