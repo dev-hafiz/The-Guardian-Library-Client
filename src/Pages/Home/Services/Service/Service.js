@@ -13,7 +13,7 @@ const Service = ({service}) => {
 
       <CardMedia
           component="img"
-          style={{width:'40px', margin:'0 auto', paddingTop:'20px'}}
+          style={{width:'50px', margin:'0 auto', paddingTop:'20px'}}
           image={img}
           alt="Paella dish"
           />

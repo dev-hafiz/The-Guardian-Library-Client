@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
 import { Box, Typography, TextField, Button, Alert, AlertTitle} from '@mui/material';
+import useAuth from '../../../../hooks/useAuth';
 
 const MakeAdmin = () => {
+
+     const {token} = useAuth();
 
      //Email State
      const [email, setEmail] = useState('')
@@ -20,6 +23,7 @@ const MakeAdmin = () => {
           fetch('http://localhost:5000/users/admin',{
                method : 'PUT',
                headers:{
+                    'authorization' : `Bearer ${token}`,
                     'content-type':'application/json'
                },
                body: JSON.stringify(user)

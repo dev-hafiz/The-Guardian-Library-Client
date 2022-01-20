@@ -10,6 +10,7 @@ import DashBoard from "./Pages/Home/DashBoard/DashBoard/DashBoard";
 import DashboardHome from "./Pages/Home/DashBoard/DashboardHome/DashboardHome";
 import MakeAdmin from "./Pages/Home/DashBoard/MakeAdmin/MakeAdmin";
 import AddTeacher from "./Pages/Home/DashBoard/AddTeacher/AddTeacher";
+import AdminRoute from "./Login/AdminRoute/AdminRoute";
 
 function App() {
   return (
@@ -30,8 +31,11 @@ function App() {
           <DashBoard/>
           </PrivateRoute>}>
           <Route path="/dashboard" element={<DashboardHome/>} />
-          <Route path="/dashboard/makeAdmin" element={<MakeAdmin/>} />
-          <Route path="/dashboard/addTeacher" element={<AddTeacher/>} />
+          <Route path="/dashboard/makeAdmin" element={
+            <AdminRoute><MakeAdmin/></AdminRoute>} />
+          <Route path="/dashboard/addTeacher" element={
+            <AdminRoute><AddTeacher/></AdminRoute>
+          } />
 
           </Route>
 

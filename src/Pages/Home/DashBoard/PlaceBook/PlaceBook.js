@@ -11,12 +11,16 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 const PlaceBook = ({date}) => {
-     const {user} = useAuth()
+     const {user, token} = useAuth()
      const [placedBooks, setPlacedBooks] = useState([])
 
      useEffect(()=>{
      const uri = `http://localhost:5000/booked?email=${user.email}&date=${date}`
-     fetch(uri)
+     fetch(uri,{
+       headers:{
+        'authorization' : `Bearer ${token}`,
+       }
+     })
      .then( res => res.json())
      .then( data => setPlacedBooks(data))
      },[date])

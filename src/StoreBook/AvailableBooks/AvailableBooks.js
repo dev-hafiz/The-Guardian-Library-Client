@@ -9,7 +9,7 @@ const AvailableBooks = ({date}) => {
      const [bookSlots, setBookSlots] = useState([])
      const [bookedSuccess, setBookeSuccess] = useState(false)
      useEffect(()=>{
-          fetch(`/BookingSlots.json`)
+          fetch(`http://localhost:5000/libraryBook`)
           .then(res => res.json())
           .then(data => setBookSlots(data))
      },[])

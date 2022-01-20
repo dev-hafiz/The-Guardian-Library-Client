@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import teacherImg from '../../../../src/Assets/images/HarryTeacher.png';
 import teacherBg from '../../../../src/Assets/images/teacherBG.png';
-import {  Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -15,7 +15,6 @@ const talkBG  = {
      backgroundBlendMode: 'darken, luminosity',
      marginTop:'190px',
      paddingTop:'30px',
-     
      width:'100%'
      
 }
