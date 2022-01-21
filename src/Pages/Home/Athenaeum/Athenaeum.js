@@ -27,7 +27,7 @@ const Athenaeum = () => {
                     </Typography>
                </Box>
                <Box>
-               <Typography variant='h4' style={{color:'#333333', paddingTop:'100px', textAlign:'right', paddingRight:'20px', fontWeight:'bold'}}>
+               <Typography variant='h4' style={{color:'#333333', paddingTop:'100px', paddingRight:'20px', fontWeight:'bold', textTransform:'uppercase'}}>
                Bilingual Storytime
                </Typography>
                <hr />

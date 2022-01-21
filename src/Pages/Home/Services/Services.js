@@ -25,7 +25,7 @@ const Services = () => {
           <Container>
           <Box sx={{width: '400px', marginBottom: '50px'}}>
           <Typography variant='h2' style={{fontFamily: 'Abril Fatface', color:'#333333'}} >
-               Top Focuses Features
+               Top Focus Features
           </Typography>
           </Box>
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 12, sm: 12, md: 12 }}>

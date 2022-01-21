@@ -26,7 +26,7 @@ const TopBar = () => {
                
               </IconButton>
               <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
-                Okshi's Learner
+                The Guardian
               </Typography>
 
               {user.email && <NavLink style={{textDecoration:"none"}}  to="/dashboard"> 

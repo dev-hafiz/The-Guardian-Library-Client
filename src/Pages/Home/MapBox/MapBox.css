@@ -1,0 +1,52 @@
+.mapDirection {
+     position: relative;
+     width: 100%;
+
+}
+
+.contactDash {
+     width: 50px;
+     height: 4px;
+     background: #CC8D52;
+     margin: 0 auto;
+
+}
+
+input,
+textarea {
+     outline: none;
+     font-size: 16px;
+     margin-left: 16px;
+}
+
+.ContactInput {
+     border: none;
+     background: none;
+     width: 100%;
+}
+
+.contactSpan {
+     display: flex;
+     justify-content: center;
+     background: #eee;
+     padding: 14px 16px;
+     width: 80%;
+     margin: 0 auto;
+}
+
+.contactIcon {
+     color: #CC8D52;
+}
+
+.postBtn {
+     background: none;
+     border: none;
+     outline: none;
+     width: 85%;
+     margin: 0 auto;
+     padding: 10px 16px;
+     background: #CC8D52;
+     color: #fff;
+     font-size: 20px;
+
+}
