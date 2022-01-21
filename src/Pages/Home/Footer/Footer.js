@@ -119,7 +119,7 @@ const Footer = () => {
                     <i className="fas fa-arrow-right right-icon"></i> Review
                     </Typography>
                </NavLink> <br />
-               <NavLink className='bottom-link'  to="#">
+               <NavLink className='bottom-link'  to="/contact">
                     <Typography className='hoverActive' sx={{marginBottom:'-10px'}}>
                     <i className="fas fa-arrow-right right-icon"></i> Contact
                     </Typography>

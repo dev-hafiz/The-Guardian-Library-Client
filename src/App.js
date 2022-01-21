@@ -11,6 +11,7 @@ import DashboardHome from "./Pages/Home/DashBoard/DashboardHome/DashboardHome";
 import MakeAdmin from "./Pages/Home/DashBoard/MakeAdmin/MakeAdmin";
 import AddTeacher from "./Pages/Home/DashBoard/AddTeacher/AddTeacher";
 import AdminRoute from "./Login/AdminRoute/AdminRoute";
+import ContactArea from "./Pages/Home/ContactArea/ContactArea";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<ContactArea />} />
         </Routes>
       </BrowserRouter>
       </AuthProvider>

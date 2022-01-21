@@ -12,7 +12,7 @@ const Athenaeum = () => {
      },[])
 
      return (
-          <Box>
+          <Box sx={{marginTop:'120px'}}>
                <Grid  container rowSpacing={0} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                <Grid data-aos="fade-right" className='libraryLeftBox' sx={{background:'#E2A58F'}} item xs={12} md={6}>
                <img width='90%' height='100%' src={library} alt="" />

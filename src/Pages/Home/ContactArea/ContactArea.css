@@ -1,0 +1,29 @@
+.spanContact {
+     border-bottom: 1px solid gray;
+     display: flex;
+     padding: 16px 20px;
+}
+
+.btnPost {
+     width: 50%;
+     padding: 14px 16px;
+     margin-top: 30px;
+     margin-bottom: 60px;
+     border: #CC8D52 1px solid;
+     font-size: 16px;
+     font-weight: 600;
+     background: #eee;
+}
+
+.Dashcontact {
+     width: 102px;
+     height: 3px;
+     background: #CC8D52;
+     margin-top: 16px;
+}
+
+.social_icon {
+     font-size: 30px;
+     color: #333333;
+     margin-right: 16px;
+}

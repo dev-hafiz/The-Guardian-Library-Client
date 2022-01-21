@@ -4,10 +4,16 @@ import mapboxgl from 'mapbox-gl';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 import { Box } from '@mui/system';
 import './MapBox.css'; 
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGFmaXp1cnJhaGFtYW4iLCJhIjoiY2t4YTlzMXh5MDhnZjJvcXExY3M2eGhxdCJ9.kWOWkCqkx4KvwLF9f8sLpw';
 
 const MapBox = () => {
+
+     useEffect(()=>{
+          Aos.init({duration:2000});
+     },[])
 
      useEffect(()=>{
           const map = new mapboxgl.Map({
@@ -26,17 +32,17 @@ const MapBox = () => {
      },[])
 
      return (
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{marginTop:'110px', marginBottom:'80px'}}>
-          <Grid  className='mapDirection' item xs={12} md={6}>
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{marginTop:'120px', marginBottom:'80px'}}>
+          <Grid data-aos="fade-right" className='mapDirection' item xs={12} md={6}>
          
 
          <div id="map"></div>
 
          
           </Grid>
-          <Grid item xs={12}  md={6} >
+          <Grid data-aos="fade-left" item xs={12}  md={6} >
           <Box sx={{marginLeft:'20px', marginTop:'10px'}}>
-          <Typography variant='h4' sx={{textAlign:'center', fontWeight:'bold', paddingBottom:'10px'}}>
+          <Typography variant='h4' sx={{textAlign:'center', paddingBottom:'10px',fontFamily: 'Abril Fatface', textTransform:'uppercase'}}>
                Love to hear from you
           </Typography>
           <Box className='contactDash'></Box>

@@ -39,6 +39,9 @@ const TopBar = () => {
               <NavLink style={{textDecoration:"none"}}  to="/storebook"> 
               <Button sx={{color:'#171717'}}>Store Books</Button> 
               </NavLink>
+              <NavLink style={{textDecoration:"none"}}  to="/contact"> 
+              <Button sx={{color:'#171717'}}>Contact US</Button> 
+              </NavLink>
               { !user.email ? <NavLink style={{textDecoration:"none"}}  to="/Login"> 
               <Button sx={{color:'#171717'}}>Login</Button> 
               </NavLink>
