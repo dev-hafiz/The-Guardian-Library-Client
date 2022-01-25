@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
+
 const TopBar = () => {
 
   const {userLogOut , user} = useAuth()
@@ -25,9 +26,11 @@ const TopBar = () => {
               >
                
               </IconButton>
-              <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface', color:'#333333'}}>
-                The Guardian
+             
+              <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Abril Fatface'}}>
+              <NavLink style={{textDecoration:'none', color:'#333333'}} to="/">The Guardian</NavLink>
               </Typography>
+             
 
               {user.email && <NavLink style={{textDecoration:"none"}}  to="/dashboard"> 
               <Button sx={{color:'#171717'}}>DashBoard</Button> 

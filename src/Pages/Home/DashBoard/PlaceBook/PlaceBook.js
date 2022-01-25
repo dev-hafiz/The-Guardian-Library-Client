@@ -12,7 +12,8 @@ import Paper from '@mui/material/Paper';
 
 const PlaceBook = ({date}) => {
      const {user, token} = useAuth()
-     const [placedBooks, setPlacedBooks] = useState([])
+    //  const [placedBooks, setPlacedBooks] = useState([])
+     const [orders, setOrders] = useState([]);
 
      useEffect(()=>{
      const uri = `http://localhost:5000/booked?email=${user.email}&date=${date}`
@@ -22,13 +23,33 @@ const PlaceBook = ({date}) => {
        }
      })
      .then( res => res.json())
-     .then( data => setPlacedBooks(data))
+     .then( data => setOrders(data))
      },[date])
+
+
+     const handleDelete = id => {
+      
+      const proceed = window.confirm("Are you sure to delete this one")
+      if(proceed){
+           const url = `http://localhost:5000/booked/${id}`
+      fetch(url,{
+           method:'DELETE'
+      })
+      .then(res => res.json())
+      .then(data =>{
+           if(data.deletedCount> 0){
+                alert('delete successfully')
+                const remainingOrders = orders.filter(order => order._id !== id)
+                setOrders(remainingOrders)
+           }
+      })
+      }
+ }
 
      return (
           <Box>
             <Typography variant='h5' sx={{fontWeight:'bold'}}>
-                 Your Placed Books {placedBooks.length}
+                 Your Placed Books {orders.length}
             </Typography>
             <hr style={{marginBottom:"40px"}} />
 
@@ -45,9 +66,9 @@ const PlaceBook = ({date}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {placedBooks.map((row) => (
+          {orders.map((row) => (
             <TableRow
-              key={row.name}
+              key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
@@ -56,7 +77,9 @@ const PlaceBook = ({date}) => {
               <TableCell><img style={{width:'40px'}} src={row.img} alt="" /></TableCell>
               <TableCell>{row.BookName}</TableCell>
               <TableCell>{row.Price}</TableCell>
-              <TableCell><Button variant='text' sx={{color:'#171717'}}> <i className="fas fa-trash"></i></Button></TableCell>
+              <TableCell><Button
+               onClick={()=> handleDelete(orders[0]._id)}
+               variant='text' sx={{color:'#171717'}}> <i className="fas fa-trash"></i></Button></TableCell>
               <TableCell>{row.protein}</TableCell>
             </TableRow>
           ))}

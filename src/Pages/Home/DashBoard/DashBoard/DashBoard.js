@@ -8,7 +8,7 @@ import { Button } from '@mui/material';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
-const drawerWidth = 200;
+const drawerWidth = 230;
 
 function DashBoard(props) {
      const {userLogOut, isAdmin} = useAuth()
@@ -40,6 +40,12 @@ function DashBoard(props) {
       {isAdmin && <Box>
         <NavLink style={{textDecoration:"none"}}  to="/dashboard/makeAdmin"> 
       <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-user-shield" style={{marginRight:'8px', fontSize:'20px' }}></i>  Make Admin</Button> 
+      </NavLink>
+        <NavLink style={{textDecoration:"none"}}  to="/dashboard/addBooksCollections"> 
+      <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-book-medical" style={{marginRight:'8px', fontSize:'20px' }}></i>  Add Books</Button> 
+      </NavLink>
+        <NavLink style={{textDecoration:"none"}}  to="/dashboard/manageAllBooks"> 
+      <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-user-edit" style={{marginRight:'8px', fontSize:'20px' }}></i> Manage Books</Button> 
       </NavLink>
       <NavLink style={{textDecoration:"none"}}  to="/dashboard/addTeacher"> 
       <Button sx={{color:'#171717', px:4, my:5,marginTop:'-38px'}} variant='text'><i className="fas fa-user-graduate" style={{marginRight:'8px', fontSize:'20px' }}></i>  Add Teacher</Button> 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import teacherImg from '../../../../src/Assets/images/HarryTeacher.png';
@@ -25,7 +25,7 @@ const TeacherTalk = () => {
         Aos.init({duration:1000});
     },[])
 
-    const [services, SetServices] = useState([])
+    
 
      return (
           <Box style={talkBG} sx={{ flexGrow: 1, marginTop:'100px', marginBottom:'100px' }}>

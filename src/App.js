@@ -12,6 +12,9 @@ import MakeAdmin from "./Pages/Home/DashBoard/MakeAdmin/MakeAdmin";
 import AddTeacher from "./Pages/Home/DashBoard/AddTeacher/AddTeacher";
 import AdminRoute from "./Login/AdminRoute/AdminRoute";
 import ContactArea from "./Pages/Home/ContactArea/ContactArea";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage";
+import AddBooksCollections from "./Pages/Home/DashBoard/AddBooksCollections/AddBooksCollections";
+import ManageAllBooks from "./Pages/Home/DashBoard/ManageAllBooks/ManageAllBooks";
 
 function App() {
   return (
@@ -37,12 +40,19 @@ function App() {
           <Route path="/dashboard/addTeacher" element={
             <AdminRoute><AddTeacher/></AdminRoute>
           } />
+          <Route path="/dashboard/addBooksCollections" element={
+            <AdminRoute><AddBooksCollections/></AdminRoute>
+          } />
+          <Route path="/dashboard/manageAllBooks" element={
+            <AdminRoute><ManageAllBooks/></AdminRoute>
+          } />
 
           </Route>
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<ContactArea />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
       </AuthProvider>
