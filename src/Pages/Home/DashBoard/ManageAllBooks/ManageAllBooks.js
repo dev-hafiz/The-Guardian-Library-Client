@@ -16,15 +16,33 @@ const ManageAllBooks = () => {
      console.log(placedBooks);
 
      useEffect(()=>{
-     fetch(`http://localhost:5000/bookedManage`)
+     fetch(`http://localhost:5000/libraryBook`)
      .then(res => res.json())
      .then(data => setPlacedBooks(data))
      },[])
 
+     const handleDelete = id => {
+      
+      const proceed = window.confirm("Are you sure to delete this one")
+      if(proceed){
+           const url = `http://localhost:5000/libraryBook/${id}`
+      fetch(url,{
+           method:'DELETE'
+      })
+      .then(res => res.json())
+      .then(data =>{
+           if(data.deletedCount> 0){
+                alert('delete successfully')
+                const remainingplacedBooks = placedBooks.filter(order => order._id !== id)
+                setPlacedBooks(remainingplacedBooks)
+           }
+      })
+      }
+ }
      return (
           <Box>
           <Typography variant='h5' sx={{fontWeight:'bold'}}>
-               Manage Total Orders {placedBooks.length}
+               Manage Total placedBooks {placedBooks.length}
           </Typography>
           <hr style={{marginBottom:"40px"}} />
 
@@ -32,7 +50,7 @@ const ManageAllBooks = () => {
     <Table aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Name </TableCell>
+         
           <TableCell>Book Cover</TableCell>
           <TableCell>Book Title</TableCell>
           <TableCell>Price</TableCell>
@@ -46,13 +64,13 @@ const ManageAllBooks = () => {
             key={row.name}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
-            <TableCell component="th" scope="row">
-              {row.learnerName}
-            </TableCell>
+           
             <TableCell><img style={{width:'40px'}} src={row.img} alt="" /></TableCell>
-            <TableCell>{row.BookName}</TableCell>
+            <TableCell>{row.title}</TableCell>
             <TableCell>{row.Price}</TableCell>
-            <TableCell><Button variant='text' sx={{color:'#171717'}}> <i className="fas fa-trash"></i></Button></TableCell>
+            <TableCell><Button
+            onClick={()=> handleDelete(placedBooks[0]._id)}
+             variant='text' sx={{color:'#171717'}}> <i className="fas fa-trash"></i></Button></TableCell>
             <TableCell><Button variant='text' sx={{color:'#171717'}}> <i className="fas fa-pen-alt"></i></Button></TableCell>
           </TableRow>
         ))}

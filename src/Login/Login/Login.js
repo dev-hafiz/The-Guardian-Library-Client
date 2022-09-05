@@ -27,6 +27,7 @@ const Login = () => {
   const handleGoogleLogin = () => {
     loginWithGoogle(location , navigate);
   };
+  
   //Form handler
   const handleLoginSubmit = (e) => {
 
